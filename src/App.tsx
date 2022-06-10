@@ -1,11 +1,16 @@
-import { FC } from 'react';
+import { FC, useState, useEffect, useCallback } from 'react';
+import axios from 'axios';
+import { apiDomain, apiVersion } from './../config/environment.config';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import SignInSignUp from './Pages/SignInSignUp';
 import Admin from './Pages/Admin';
 import Page404 from './Pages/Page404';
+import { IGeneralInfo } from './interfaces';
 
 const App: FC = () => {
+  const [generalInfo, setGeneralInfo] = useState<IGeneralInfo | object>({});
+
   return (
     <>
       <Routes>
