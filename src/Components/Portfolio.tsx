@@ -12,12 +12,12 @@ export interface IPortfolioProps {
 const Portfolio: FC<IPortfolioProps> = ({ setFetchLoaded }): ReactElement => {
   const [pageIndex, setPageIndex] = useState<number>(1);
 
-  const { data, error } = useRequest<IPortfolio>({
+  const { data, loading, error } = useRequest<IPortfolio>({
     method: 'get',
     url: `${apiDomain}/api/${apiVersion}/projects/pagination?page=${pageIndex - 1}`
   });
 
-  useIsLoaded({ data: data, error, setStateFunc: setFetchLoaded, objectKey: 'portfolio' });
+  useIsLoaded({ loading, error, setStateFunc: setFetchLoaded, objectKey: 'portfolio' });
 
   return (
     <div>
