@@ -26,7 +26,7 @@ const HomagePage: FC = (): ReactElement => {
 
   return (
     <>
-      {!fetchLoaded.info.isLoaded && !fetchLoaded.portfolio.isLoaded && !fetchLoaded.resume.isLoaded && <p>Is Loading ...</p>}
+      {(!fetchLoaded.info.isLoaded || !fetchLoaded.portfolio.isLoaded || !fetchLoaded.resume.isLoaded) && <p>Is Loading ...</p>}
       <h1>Homepage</h1>
       <About setGeneralInfo={setGeneralInfo} fetchLoaded={fetchLoaded} setFetchLoaded={setFetchLoaded} />
       <Portfolio fetchLoaded={fetchLoaded} setFetchLoaded={setFetchLoaded} />
