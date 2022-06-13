@@ -1,6 +1,7 @@
 import { FC, ReactElement, useState, useEffect, useRef } from 'react';
 import { PuffLoader } from 'react-spinners';
 import { IFetchLoaded } from './../Pages/HomePage';
+import { LoadingContainer } from '../styles/LoadingContainer.styled';
 
 export interface ILoadingProps {
   fetchLoaded: IFetchLoaded;
@@ -50,11 +51,9 @@ const Loading: FC<ILoadingProps> = ({ fetchLoaded }): ReactElement => {
   return (
     <>
       {animLoading && (
-        <div ref={loadingRef}>
-          <div>
-            <PuffLoader color={'#1e87f0'} loading={animLoading} />
-          </div>
-        </div>
+        <LoadingContainer ref={loadingRef}>
+          <PuffLoader color={'#1e87f0'} loading={animLoading} />
+        </LoadingContainer>
       )}
     </>
   );
