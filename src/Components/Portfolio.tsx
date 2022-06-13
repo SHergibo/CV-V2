@@ -1,5 +1,6 @@
-import { FC, ReactElement, Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { FC, ReactElement, Dispatch, SetStateAction, useState } from 'react';
 import { useRequest } from '../Hooks/useRequestHooks';
+import useIsLoaded from '../Hooks/useIsLoadedHook';
 import { apiDomain, apiVersion } from '../config/environment.config';
 import { IPortfolio } from '../interfaces';
 import { IFetchLoaded } from '../Pages/HomePage';
@@ -16,20 +17,7 @@ const Portfolio: FC<IPortfolioProps> = ({ setFetchLoaded }): ReactElement => {
     url: `${apiDomain}/api/${apiVersion}/projects/pagination?page=${pageIndex - 1}`
   });
 
-  useEffect(() => {
-    if (data && !error) {
-      setFetchLoaded((prevState) => ({
-        ...prevState,
-        portfolio: { isLoaded: true, error: false }
-      }));
-    }
-    if (error) {
-      setFetchLoaded((prevState) => ({
-        ...prevState,
-        portfolio: { isLoaded: false, error: true }
-      }));
-    }
-  }, [data, error, setFetchLoaded]);
+  useIsLoaded({ data: data, error, setStateFunc: setFetchLoaded, objectKey: 'portfolio' });
 
   return (
     <div>
