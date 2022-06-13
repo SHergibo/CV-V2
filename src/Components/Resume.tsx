@@ -1,5 +1,6 @@
-import { FC, ReactElement, Dispatch, SetStateAction, useEffect } from 'react';
+import { FC, ReactElement, Dispatch, SetStateAction } from 'react';
 import { useRequest } from '../Hooks/useRequestHooks';
+import useIsLoaded from '../Hooks/useIsLoadedHook';
 import { apiDomain, apiVersion } from '../config/environment.config';
 import { IEducExpResume, ISkillResume } from '../interfaces';
 import { IFetchLoaded } from '../Pages/HomePage';
@@ -19,20 +20,8 @@ const Resume: FC<IResumeProps> = ({ setFetchLoaded }): ReactElement => {
     url: `${apiDomain}/api/${apiVersion}/skills/skills-list`
   });
 
-  useEffect(() => {
-    if (dataEducExp && !errorEducExp && dataSkill && !errorSkill) {
-      setFetchLoaded((prevState) => ({
-        ...prevState,
-        resume: { isLoaded: true, error: false }
-      }));
-    }
-    if (errorEducExp || errorSkill) {
-      setFetchLoaded((prevState) => ({
-        ...prevState,
-        resume: { isLoaded: false, error: true }
-      }));
-    }
-  }, [dataEducExp, errorEducExp, dataSkill, errorSkill, setFetchLoaded]);
+  useIsLoaded({ data: dataEducExp, error: errorEducExp, setStateFunc: setFetchLoaded, objectKey: 'educExp' });
+  useIsLoaded({ data: dataSkill, error: errorSkill, setStateFunc: setFetchLoaded, objectKey: 'skill' });
 
   return (
     <div>
