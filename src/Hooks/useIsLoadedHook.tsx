@@ -1,30 +1,28 @@
 import { useEffect, Dispatch, SetStateAction } from 'react';
 import { AxiosError } from 'axios';
-import { IGeneralInfo, IPortfolio, IEducExpResume, ISkillResume } from '../interfaces';
-import { IFetchLoaded } from './../Pages/HomePage';
 
 interface IUsedIsLoadedProps {
-  data: IGeneralInfo | IPortfolio | IEducExpResume[] | ISkillResume[] | undefined;
+  loading: boolean;
   error: AxiosError | undefined;
-  setStateFunc: Dispatch<SetStateAction<IFetchLoaded>>;
+  setStateFunc: Dispatch<SetStateAction<any>>;
   objectKey: string;
 }
 
-const useIsLoaded = ({ data, error, setStateFunc, objectKey }: IUsedIsLoadedProps): void => {
+const useIsLoaded = ({ loading, error, setStateFunc, objectKey }: IUsedIsLoadedProps): void => {
   useEffect(() => {
-    if (data && !error) {
-      setStateFunc((prevState: IFetchLoaded) => ({
+    if (!loading && !error) {
+      setStateFunc((prevState: any) => ({
         ...prevState,
         [objectKey]: { isLoaded: true, error: false }
       }));
     }
     if (error) {
-      setStateFunc((prevState: IFetchLoaded) => ({
+      setStateFunc((prevState: any) => ({
         ...prevState,
         [objectKey]: { isLoaded: false, error: true }
       }));
     }
-  }, [data, error, setStateFunc, objectKey]);
+  }, [loading, error, setStateFunc, objectKey]);
 };
 
 export default useIsLoaded;
