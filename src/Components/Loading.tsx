@@ -13,13 +13,13 @@ const Loading: FC<ILoadingProps> = ({ fetchLoaded }): ReactElement => {
 
   useEffect(() => {
     let allLoaded: boolean = false;
-    for (const [key, value] of Object.entries(fetchLoaded)) {
+    Object.values(fetchLoaded).forEach((value) => {
       if (value.isLoaded) {
         allLoaded = true;
       } else {
         allLoaded = false;
       }
-    }
+    });
 
     if (allLoaded) {
       setLoading(false);
