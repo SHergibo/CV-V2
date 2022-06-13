@@ -1,5 +1,6 @@
 import { useEffect, FC, Dispatch, SetStateAction, ReactElement } from 'react';
 import { useRequest } from '../Hooks/useRequestHooks';
+import useIsLoaded from '../Hooks/useIsLoadedHook';
 import { apiDomain, apiVersion } from '../config/environment.config';
 import { IGeneralInfo } from '../interfaces';
 import { IFetchLoaded } from '../Pages/HomePage';
@@ -15,20 +16,7 @@ const About: FC<IAboutProps> = ({ setGeneralInfo, setFetchLoaded }): ReactElemen
     url: `${apiDomain}/api/${apiVersion}/infos`
   });
 
-  useEffect(() => {
-    if (data && !error) {
-      setFetchLoaded((prevState) => ({
-        ...prevState,
-        info: { isLoaded: true, error: false }
-      }));
-    }
-    if (error) {
-      setFetchLoaded((prevState) => ({
-        ...prevState,
-        info: { isLoaded: false, error: true }
-      }));
-    }
-  }, [data, error, setFetchLoaded]);
+  useIsLoaded({ data: data, error, setStateFunc: setFetchLoaded, objectKey: 'info' });
 
   useEffect(() => {
     if (data && !error) setGeneralInfo(data);
