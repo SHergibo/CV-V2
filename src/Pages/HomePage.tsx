@@ -1,4 +1,4 @@
-import { useState, FC, ReactElement } from 'react';
+import { useState, FC, ReactElement, useEffect } from 'react';
 import About from '../Components/About';
 import Contact from '../Components/Contact';
 import Portfolio from '../Components/Portfolio';
@@ -13,7 +13,8 @@ interface ILoaded {
 export interface IFetchLoaded {
   info: ILoaded;
   portfolio: ILoaded;
-  resume: ILoaded;
+  educExp: ILoaded;
+  skill: ILoaded;
 }
 
 const HomagePage: FC = (): ReactElement => {
@@ -21,12 +22,13 @@ const HomagePage: FC = (): ReactElement => {
   const [fetchLoaded, setFetchLoaded] = useState<IFetchLoaded>({
     info: { isLoaded: false, error: false },
     portfolio: { isLoaded: false, error: false },
-    resume: { isLoaded: false, error: false }
+    educExp: { isLoaded: false, error: false },
+    skill: { isLoaded: false, error: false }
   });
 
   return (
     <>
-      {(!fetchLoaded.info.isLoaded || !fetchLoaded.portfolio.isLoaded || !fetchLoaded.resume.isLoaded) && <p>Is Loading ...</p>}
+      {(!fetchLoaded.info.isLoaded || !fetchLoaded.portfolio.isLoaded || !fetchLoaded.educExp.isLoaded || !fetchLoaded.skill.isLoaded) && <p>Is Loading ...</p>}
       <h1>Homepage</h1>
       <About setGeneralInfo={setGeneralInfo} setFetchLoaded={setFetchLoaded} />
       <Portfolio setFetchLoaded={setFetchLoaded} />
