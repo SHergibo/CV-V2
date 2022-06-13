@@ -10,18 +10,26 @@ export interface IResumeProps {
 }
 
 const Resume: FC<IResumeProps> = ({ setFetchLoaded }): ReactElement => {
-  const { data: dataEducExp, error: errorEducExp } = useRequest<IEducExpResume[]>({
+  const {
+    data: dataEducExp,
+    loading: loadingEducExp,
+    error: errorEducExp
+  } = useRequest<IEducExpResume[]>({
     method: 'get',
     url: `${apiDomain}/api/${apiVersion}/educs-exps/educs-exps-list`
   });
 
-  const { data: dataSkill, error: errorSkill } = useRequest<ISkillResume[]>({
+  const {
+    data: dataSkill,
+    loading: lodingSkill,
+    error: errorSkill
+  } = useRequest<ISkillResume[]>({
     method: 'get',
     url: `${apiDomain}/api/${apiVersion}/skills/skills-list`
   });
 
-  useIsLoaded({ data: dataEducExp, error: errorEducExp, setStateFunc: setFetchLoaded, objectKey: 'educExp' });
-  useIsLoaded({ data: dataSkill, error: errorSkill, setStateFunc: setFetchLoaded, objectKey: 'skill' });
+  useIsLoaded({ loading: loadingEducExp, error: errorEducExp, setStateFunc: setFetchLoaded, objectKey: 'educExp' });
+  useIsLoaded({ loading: lodingSkill, error: errorSkill, setStateFunc: setFetchLoaded, objectKey: 'skill' });
 
   return (
     <div>
