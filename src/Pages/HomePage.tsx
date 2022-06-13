@@ -1,6 +1,7 @@
-import { useState, FC, ReactElement, useEffect } from 'react';
+import { useState, FC, ReactElement } from 'react';
 import About from '../Components/About';
 import Contact from '../Components/Contact';
+import Loading from '../Components/Loading';
 import Portfolio from '../Components/Portfolio';
 import Resume from '../Components/Resume';
 import { IGeneralInfo } from './../interfaces';
@@ -28,7 +29,7 @@ const HomagePage: FC = (): ReactElement => {
 
   return (
     <>
-      {(!fetchLoaded.info.isLoaded || !fetchLoaded.portfolio.isLoaded || !fetchLoaded.educExp.isLoaded || !fetchLoaded.skill.isLoaded) && <p>Is Loading ...</p>}
+      <Loading fetchLoaded={fetchLoaded} />
       <h1>Homepage</h1>
       <About setGeneralInfo={setGeneralInfo} setFetchLoaded={setFetchLoaded} />
       <Portfolio setFetchLoaded={setFetchLoaded} />
