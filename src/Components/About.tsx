@@ -11,12 +11,12 @@ interface IAboutProps {
 }
 
 const About: FC<IAboutProps> = ({ setGeneralInfo, setFetchLoaded }): ReactElement => {
-  const { data, error } = useRequest<IGeneralInfo>({
+  const { data, error, loading } = useRequest<IGeneralInfo>({
     method: 'get',
     url: `${apiDomain}/api/${apiVersion}/infos`
   });
 
-  useIsLoaded({ data: data, error, setStateFunc: setFetchLoaded, objectKey: 'info' });
+  useIsLoaded({ loading, error, setStateFunc: setFetchLoaded, objectKey: 'info' });
 
   useEffect(() => {
     if (data && !error) setGeneralInfo(data);
