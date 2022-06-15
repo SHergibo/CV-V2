@@ -1,14 +1,13 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/Theme';
 import GlobalStyles from './styles/Global';
-import { FC, ReactElement } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import SignInSignUp from './Pages/SignInSignUp';
 import Admin from './Pages/Admin';
 import Page404 from './Pages/Page404';
 
-const App: FC = (): ReactElement => {
+const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
