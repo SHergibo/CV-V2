@@ -1,6 +1,4 @@
-import { FC } from 'react';
-
-const SignInSignUp: FC = () => {
+const SignInSignUp = () => {
   return <div>Login</div>;
 };
 
