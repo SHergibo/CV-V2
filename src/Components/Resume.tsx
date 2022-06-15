@@ -1,15 +1,15 @@
-import { FC, ReactElement, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction } from 'react';
 import { useRequest } from '../Hooks/useRequestHooks';
 import useIsLoaded from '../Hooks/useIsLoadedHook';
 import { apiDomain, apiVersion } from '../config/environment.config';
 import { IEducExpResume, ISkillResume } from '../interfaces';
 import { IFetchLoaded } from '../Pages/HomePage';
 
-export interface IResumeProps {
+interface IResumeProps {
   setFetchLoaded: Dispatch<SetStateAction<IFetchLoaded>>;
 }
 
-const Resume: FC<IResumeProps> = ({ setFetchLoaded }): ReactElement => {
+const Resume = ({ setFetchLoaded }: IResumeProps) => {
   const {
     data: dataEducExp,
     loading: loadingEducExp,
