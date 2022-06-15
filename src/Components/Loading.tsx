@@ -1,15 +1,15 @@
-import { FC, ReactElement, useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { PuffLoader } from 'react-spinners';
 import { IFetchLoaded } from './../Pages/HomePage';
 import { LoadingContainer } from '../styles/LoadingContainer.styled';
 
-export interface ILoadingProps {
+interface ILoadingProps {
   fetchLoaded: IFetchLoaded;
 }
 
-const Loading: FC<ILoadingProps> = ({ fetchLoaded }): ReactElement => {
-  const [animLoading, setAnimLoading] = useState<boolean>(true);
-  const [loading, setLoading] = useState<boolean>(true);
+const Loading = ({ fetchLoaded }: ILoadingProps) => {
+  const [animLoading, setAnimLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
   const loadingRef = useRef<HTMLDivElement>(null!);
 
   useEffect(() => {
