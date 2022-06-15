@@ -4,6 +4,7 @@ import Contact from '../../Components/Contact';
 import Loading from '../../Components/Loading';
 import Portfolio from '../../Components/Portfolio';
 import Resume from '../../Components/Resume';
+import Welcome from '../../Components/Welcome';
 import { IGeneralInfo } from '../../interfaces';
 
 interface ILoaded {
@@ -30,7 +31,9 @@ const HomagePage = () => {
   return (
     <>
       <Loading fetchLoaded={fetchLoaded} />
-      <h1>Homepage</h1>
+      <header>
+        <Welcome generalInfo={generalInfo} />
+      </header>
       <About setGeneralInfo={setGeneralInfo} setFetchLoaded={setFetchLoaded} />
       <Portfolio setFetchLoaded={setFetchLoaded} />
       <Resume setFetchLoaded={setFetchLoaded} />
