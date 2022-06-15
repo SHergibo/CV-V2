@@ -1,4 +1,4 @@
-import { useState, FC, ReactElement } from 'react';
+import { useState } from 'react';
 import About from '../Components/About';
 import Contact from '../Components/Contact';
 import Loading from '../Components/Loading';
@@ -18,7 +18,7 @@ export interface IFetchLoaded {
   skill: ILoaded;
 }
 
-const HomagePage: FC = (): ReactElement => {
+const HomagePage = () => {
   const [generalInfo, setGeneralInfo] = useState<IGeneralInfo | null>(null);
   const [fetchLoaded, setFetchLoaded] = useState<IFetchLoaded>({
     info: { isLoaded: false, error: false },
