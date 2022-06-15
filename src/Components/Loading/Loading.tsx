@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { PuffLoader } from 'react-spinners';
-import { IFetchLoaded } from './../Pages/HomePage';
-import { LoadingContainer } from '../styles/LoadingContainer.styled';
+import { IFetchLoaded } from '../../Pages/HomePage';
+import { LoadingContainer } from './Loading.styled';
 
 interface ILoadingProps {
   fetchLoaded: IFetchLoaded;
