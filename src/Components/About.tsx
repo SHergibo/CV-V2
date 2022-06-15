@@ -1,4 +1,4 @@
-import { useEffect, FC, Dispatch, SetStateAction, ReactElement } from 'react';
+import { useEffect, Dispatch, SetStateAction } from 'react';
 import { useRequest } from '../Hooks/useRequestHooks';
 import useIsLoaded from '../Hooks/useIsLoadedHook';
 import { apiDomain, apiVersion } from '../config/environment.config';
@@ -10,7 +10,7 @@ interface IAboutProps {
   setFetchLoaded: Dispatch<SetStateAction<IFetchLoaded>>;
 }
 
-const About: FC<IAboutProps> = ({ setGeneralInfo, setFetchLoaded }): ReactElement => {
+const About = ({ setGeneralInfo, setFetchLoaded }: IAboutProps) => {
   const { data, error, loading } = useRequest<IGeneralInfo>({
     method: 'get',
     url: `${apiDomain}/api/${apiVersion}/infos`
