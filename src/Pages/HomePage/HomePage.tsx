@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import About from '../Components/About';
-import Contact from '../Components/Contact';
-import Loading from '../Components/Loading';
-import Portfolio from '../Components/Portfolio';
-import Resume from '../Components/Resume';
-import { IGeneralInfo } from './../interfaces';
+import About from '../../Components/About';
+import Contact from '../../Components/Contact';
+import Loading from '../../Components/Loading';
+import Portfolio from '../../Components/Portfolio';
+import Resume from '../../Components/Resume';
+import { IGeneralInfo } from '../../interfaces';
 
 interface ILoaded {
   isLoaded: boolean;
