@@ -1,11 +1,10 @@
-import { FC, ReactElement } from 'react';
 import { IGeneralInfo } from '../interfaces';
 
 interface IContactProps {
   generalInfo: IGeneralInfo | null;
 }
 
-const Contact: FC<IContactProps> = ({ generalInfo }): ReactElement => {
+const Contact = ({ generalInfo }: IContactProps) => {
   return (
     <div>
       <h3>Contact</h3>
