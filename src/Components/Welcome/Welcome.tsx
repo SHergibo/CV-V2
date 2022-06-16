@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import { IGeneralInfo } from '../../interfaces';
+import { JobName, DefaultWelcomeTitle, IconScroll } from './Welcome.styled';
 import WelcomeSection from '../WelcomeSection';
+import ReactTypingEffect from 'react-typing-effect';
 
 interface IWelcomeProps {
   generalInfo: IGeneralInfo | null;
@@ -10,7 +12,6 @@ interface IWelcomeProps {
 const Welcome = ({ generalInfo }: IWelcomeProps) => {
   const location = useLocation();
   const [profTitleArray, setProfTitleArray] = useState<string[]>([]);
-  console.log(generalInfo);
 
   useEffect(() => {
     if (generalInfo && location.pathname === '/') {
@@ -23,7 +24,19 @@ const Welcome = ({ generalInfo }: IWelcomeProps) => {
 
   return (
     <WelcomeSection pageTitle={location.pathname === '/' ? 'Bienvenue' : 'Administration'} headingText={generalInfo ? `${generalInfo.firstname} ${generalInfo.lastname}` : 'Mon site CV'}>
-      {<div>test</div>}
+      {location.pathname === '/' ? (
+        <>
+          <JobName>
+            Je suis un <ReactTypingEffect text={profTitleArray} eraseDelay={250} typingDelay={250} />
+          </JobName>
+          <IconScroll />
+        </>
+      ) : (
+        <>
+          <DefaultWelcomeTitle>Administration</DefaultWelcomeTitle>
+          <IconScroll />
+        </>
+      )}
     </WelcomeSection>
   );
 };
