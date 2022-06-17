@@ -8,6 +8,7 @@ declare module 'styled-components' {
       blue: string;
       white: string;
       greyOne: string;
+      greyTwo: string;
       greyThree: string;
       greyBorder: string;
     };
@@ -23,6 +24,7 @@ const theme: DefaultTheme = {
     blue: 'hsl(208, 100%, 43%)',
     white: '#ffffff',
     greyOne: 'hsla(0, 0%, 100%, 0.7)',
+    greyTwo: 'hsla(0, 0%, 100%, 0.5)',
     greyThree: 'hsla(0, 0%, 100%, 0.62)',
     greyBorder: 'hsla(0, 0%, 100%, 0.3)'
   },
