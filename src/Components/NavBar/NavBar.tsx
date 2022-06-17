@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Nav from './../Nav';
@@ -31,10 +31,10 @@ const NavBar = () => {
     </ul>
   );
 
-  let logOut = async () => {
+  const logOut = useCallback(async () => {
     // await logout();
     navigate('/');
-  };
+  }, [navigate]);
 
   useEffect(() => {
     if (location.pathname === '/admin') {
@@ -53,7 +53,7 @@ const NavBar = () => {
         </ul>
       );
     }
-  }, [location, navigate]);
+  }, [location, navigate, logOut]);
 
   return <Nav liList={liList} navLeftInteraction={navLeftInteraction} />;
 };
