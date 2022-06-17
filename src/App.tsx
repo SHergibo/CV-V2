@@ -6,6 +6,11 @@ import HomePage from './Pages/HomePage';
 import SignInSignUp from './Pages/SignInSignUp';
 import Admin from './Pages/Admin';
 import Page404 from './Pages/Page404';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab, fas);
 
 const App = () => {
   return (
