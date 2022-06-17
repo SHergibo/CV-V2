@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, createContext, MutableRefObject } from 'react';
 import About from '../../Components/About';
 import Contact from '../../Components/Contact';
 import Loading from '../../Components/Loading';
+import NavBar from '../../Components/NavBar';
 import Portfolio from '../../Components/Portfolio';
 import Resume from '../../Components/Resume';
 import Welcome from '../../Components/Welcome';
@@ -19,6 +20,13 @@ export interface IFetchLoaded {
   skill: ILoaded;
 }
 
+interface IContextProp {
+  generalInfo: IGeneralInfo | null;
+  headerRef: MutableRefObject<HTMLElement> | null;
+}
+
+export const navContext = createContext<IContextProp>({ generalInfo: null, headerRef: null });
+
 const HomagePage = () => {
   const [generalInfo, setGeneralInfo] = useState<IGeneralInfo | null>(null);
   const [fetchLoaded, setFetchLoaded] = useState<IFetchLoaded>({
@@ -27,16 +35,24 @@ const HomagePage = () => {
     educExp: { isLoaded: false, error: false },
     skill: { isLoaded: false, error: false }
   });
+  const headerRef = useRef<HTMLElement>(null!);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>
       <Loading fetchLoaded={fetchLoaded} />
-      <header>
+      <header ref={headerRef}>
         <Welcome generalInfo={generalInfo} />
+        <navContext.Provider value={{ generalInfo, headerRef }}>
+          <NavBar />
+        </navContext.Provider>
       </header>
       <About setGeneralInfo={setGeneralInfo} setFetchLoaded={setFetchLoaded} />
-      <Portfolio setFetchLoaded={setFetchLoaded} />
-      <Resume setFetchLoaded={setFetchLoaded} />
+      {generalInfo?.hasPortfolio && <Portfolio setFetchLoaded={setFetchLoaded} />}
+      {generalInfo?.hasResume && <Resume setFetchLoaded={setFetchLoaded} />}
       <Contact generalInfo={generalInfo} />
     </>
   );
