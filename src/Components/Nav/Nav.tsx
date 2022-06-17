@@ -42,7 +42,7 @@ const Nav = ({ liList, navLeftInteraction }: INavProps) => {
     } else {
       setMainMenuFixed(false);
     }
-  }, [headerRef, burgerMenuSwitch]);
+  }, [headerRef, burgerMenuSwitch, mainMenufixed]);
 
   const handleMenuPosition = useCallback(() => {
     if (windowWidth < 960) {
