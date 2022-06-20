@@ -8,3 +8,9 @@ export const SubTitle = styled.div`
   align-items: flex-end;
   color: ${({ theme }) => theme.colors.greyThree};
 `;
+
+export const TitleRight = styled(SubTitle)`
+  justify-content: flex-end;
+  border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  padding-right: 0.9375rem;
+`;
