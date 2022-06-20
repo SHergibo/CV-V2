@@ -50,10 +50,12 @@ const HomagePage = () => {
           <NavBar />
         </navContext.Provider>
       </header>
-      <About setGeneralInfo={setGeneralInfo} setFetchLoaded={setFetchLoaded} />
-      {generalInfo?.hasPortfolio && <Portfolio setFetchLoaded={setFetchLoaded} />}
-      {generalInfo?.hasResume && <Resume setFetchLoaded={setFetchLoaded} />}
-      <Contact generalInfo={generalInfo} />
+      <main>
+        <About setGeneralInfo={setGeneralInfo} setFetchLoaded={setFetchLoaded} />
+        {generalInfo?.hasPortfolio && <Portfolio setFetchLoaded={setFetchLoaded} />}
+        {generalInfo?.hasResume && <Resume setFetchLoaded={setFetchLoaded} />}
+        <Contact generalInfo={generalInfo} />
+      </main>
     </>
   );
 };
