@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { Wrapper } from '../../styles/components/Layout.styled';
-import { TitleRigth } from '../../styles/components/Title.styled';
+import { TitleRight } from '../../styles/components/Title.styled';
 
 export const AboutStyled = styled.div`
   overflow: hidden;
@@ -74,7 +74,7 @@ export const AboutText = styled.div`
   }
 `;
 
-export const AboutTitle = styled(TitleRigth)`
+export const AboutTitle = styled(TitleRight)`
   border-top: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
   &:after,
   &:before {
