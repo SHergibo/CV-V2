@@ -1,4 +1,4 @@
-export interface IFontAwesomeIncon {
+export interface IFontAwesomeIcon {
   label: string;
   value: string;
   prefix: string;
@@ -7,9 +7,7 @@ export interface IFontAwesomeIncon {
 interface IProfTitle {
   id: string;
   nameProfessionTitle: string;
-  fontAwesomeIcon: {
-    [key: string]: IFontAwesomeIncon;
-  };
+  fontAwesomeIcon: IFontAwesomeIcon;
   svgIconProfTitle: string;
 }
 
@@ -34,6 +32,7 @@ export interface IGeneralInfo {
   licence: string;
   professionTitles: Array<IProfTitle>;
   profilePic: IImage;
+  description: string;
   hasPortfolio: boolean;
   hasResume: boolean;
 }
@@ -70,9 +69,7 @@ export interface IEducExpResume {
 }
 
 export interface ISkillResume {
-  fontAwesomeIcon: {
-    [key: string]: IFontAwesomeIncon;
-  };
+  fontAwesomeIcon: IFontAwesomeIcon;
   nameSkill: string;
   skillCategory: string;
   svgIcon: string;
