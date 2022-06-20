@@ -6,6 +6,7 @@ declare module 'styled-components' {
     colors: {
       mainBlue: string;
       blue: string;
+      btnBlueOver: string;
       white: string;
       greyOne: string;
       greyTwo: string;
@@ -22,6 +23,7 @@ const theme: DefaultTheme = {
   colors: {
     mainBlue: 'hsl(211, 80%, 10%)',
     blue: 'hsl(208, 100%, 43%)',
+    btnBlueOver: 'hsl(232, 68%, 43%)',
     white: '#ffffff',
     greyOne: 'hsla(0, 0%, 100%, 0.7)',
     greyTwo: 'hsla(0, 0%, 100%, 0.5)',
