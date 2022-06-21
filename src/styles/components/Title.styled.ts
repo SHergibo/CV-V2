@@ -11,6 +11,6 @@ export const SubTitle = styled.div`
 
 export const TitleRight = styled(SubTitle)`
   justify-content: flex-end;
-  border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  border-right: ${({ theme }) => theme.css.border};
   padding-right: 0.9375rem;
 `;
