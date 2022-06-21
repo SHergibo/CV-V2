@@ -4,7 +4,7 @@ import { navContext } from './../../Pages/HomePage';
 import { Link } from 'react-scroll';
 import Logo from './../Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { MainMenu, ContainerNav, Menu, ListMenu, SocialNavContainer, BurgerMenu } from './Nav.styles';
+import { MainMenu, ContainerNav, Menu, ListMenu, SocialNavContainer, BurgerMenu } from './Nav.styled';
 
 interface INavProps {
   liList: {
