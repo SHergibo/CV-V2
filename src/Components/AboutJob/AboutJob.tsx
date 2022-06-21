@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { IGeneralInfo } from './../../interfaces';
+import { WindowWidthContext } from './../../Routes/Context.route';
 import parse from 'html-react-parser';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconName, IconPrefix } from '@fortawesome/fontawesome-svg-core';
@@ -10,18 +11,7 @@ interface IAboutJobProps {
 }
 
 const AboutJob = ({ generalInfo }: IAboutJobProps) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const windowWidth = useContext(WindowWidthContext);
 
   return (
     <>
