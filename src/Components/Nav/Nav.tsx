@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useContext } from 'react';
+import { WindowWidthContext } from './../../Routes/Context.route';
 import { navContext } from './../../Pages/HomePage';
 import { Link } from 'react-scroll';
 import Logo from './../Logo';
@@ -16,8 +17,8 @@ interface INavProps {
 }
 
 const Nav = ({ liList, navLeftInteraction }: INavProps) => {
+  const windowWidth = useContext(WindowWidthContext);
   const { headerRef } = useContext(navContext);
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [menuTop, setMenuTop] = useState(false);
   const [mainMenufixed, setMainMenuFixed] = useState(false);
   const [burgerMenuSwitch, setBurgerMenuSwitch] = useState(false);
@@ -69,17 +70,6 @@ const Nav = ({ liList, navLeftInteraction }: INavProps) => {
       window.removeEventListener('scroll', handleMenuPosition);
     };
   }, [handleMenuScroll, handleMenuPosition]);
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   const burgerMenu = (): void => {
     setBurgerMenuSwitch(!burgerMenuSwitch);
