@@ -1,15 +1,17 @@
-import { Dispatch, SetStateAction, useState } from 'react';
-import { useRequest } from '../Hooks/useRequestHooks';
-import useIsLoaded from '../Hooks/useIsLoadedHook';
-import { apiDomain, apiVersion } from '../config/environment.config';
-import { IPortfolio } from '../interfaces';
-import { IFetchLoaded } from '../Pages/HomePage';
+import { useState, useEffect, useCallback, useRef, useContext, Dispatch, SetStateAction } from 'react';
+import { WindowWidthContext } from './../../Routes/Context.route';
+import { useRequest } from '../../Hooks/useRequestHooks';
+import useIsLoaded from '../../Hooks/useIsLoadedHook';
+import { apiDomain, apiVersion } from '../../config/environment.config';
+import { IPortfolio } from '../../interfaces';
+import { IFetchLoaded } from '../../Pages/HomePage';
 
 interface IPortfolioProps {
   setFetchLoaded: Dispatch<SetStateAction<IFetchLoaded>>;
 }
 
 const Portfolio = ({ setFetchLoaded }: IPortfolioProps) => {
+  const windowWidth = useContext(WindowWidthContext);
   const [pageIndex, setPageIndex] = useState(1);
 
   const { data, loading, error } = useRequest<IPortfolio>({
