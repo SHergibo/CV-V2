@@ -77,7 +77,7 @@ export const PageTitle = styled(SubTitle)`
   position: absolute;
   top: 0;
   padding-left: 0.9375rem;
-  border-left: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  border-left: ${({ theme }) => theme.css.border};
 `;
 
 export const DataWelcome = styled.div`
