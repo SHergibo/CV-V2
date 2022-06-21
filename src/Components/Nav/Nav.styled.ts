@@ -34,7 +34,7 @@ export const ContainerNav = styled(Wrapper)`
     width: 100%;
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.desktop}) {
     .container-nav {
       padding: 0;
     }
@@ -64,11 +64,11 @@ export const Menu = styled.nav<IMenuProps>`
     }
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     top: -8.2rem;
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.desktop}) {
     display: flex;
     justify-content: center;
     border: none;
@@ -95,7 +95,7 @@ export const ListMenu = styled.ul`
     }
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     flex-direction: row;
     justify-content: center;
     li {
@@ -111,11 +111,11 @@ export const SocialNavContainer = styled.div`
     justify-content: center;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     padding: 0;
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.desktop}) {
     ul {
       justify-content: unset;
     }
