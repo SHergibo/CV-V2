@@ -21,6 +21,10 @@ declare module 'styled-components' {
     css: {
       border: string;
     };
+    mediaQueries: {
+      tablet: string;
+      desktop: string;
+    };
   }
 }
 
@@ -42,6 +46,10 @@ const theme: DefaultTheme = {
   },
   css: {
     border: `0.5px solid ${colors.greyBorder};`
+  },
+  mediaQueries: {
+    tablet: 'min-width: 640px',
+    desktop: 'min-width: 960px'
   }
 };
 
