@@ -14,7 +14,7 @@ export const AboutContainer = styled(Wrapper)`
   position: relative;
   margin: 0 0.9375rem;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     flex-direction: row;
     margin: 0 auto;
   }
@@ -40,7 +40,7 @@ export const ImgAbout = styled.div<IImgAboutProps>`
       }
     `}
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     position: relative;
     width: 25%;
     background-color: ${({ imgStyled, theme }) => (imgStyled ? 'transparent' : `${theme.colors.btnBlueOver}`)};
@@ -69,7 +69,7 @@ export const AboutText = styled.div`
   justify-content: space-between;
   flex-direction: column;
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     width: 75%;
   }
 `;
@@ -92,7 +92,7 @@ export const AboutTitle = styled(TitleRight)`
     left: -0.9375rem;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     border-top: none;
     &:after,
     &:before {
@@ -112,7 +112,7 @@ export const AboutMe = styled.div`
     margin: 0.625rem 0;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     padding: 1.25rem 1.25rem;
   }
 `;
@@ -148,13 +148,13 @@ export const Info = styled.div`
     width: 75rem;
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     span {
       width: 8.75rem;
     }
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.desktop}) {
     ul {
       padding: 1.25rem 2.5rem;
     }
