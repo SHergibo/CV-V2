@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/Theme';
 import GlobalStyles from './styles/Global';
 import { Routes, Route } from 'react-router-dom';
+import ContextRoute from './Routes/Context.route';
 import HomePage from './Pages/HomePage';
 import SignInSignUp from './Pages/SignInSignUp';
 import Admin from './Pages/Admin';
@@ -18,8 +19,10 @@ const App = () => {
       <>
         <GlobalStyles />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/admin" element={<Admin />} />
+          <Route element={<ContextRoute />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/admin" element={<Admin />} />
+          </Route>
           <Route path="/login" element={<SignInSignUp />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
