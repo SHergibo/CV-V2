@@ -52,7 +52,7 @@ export const AboutJobOne = styled(AbourJobDiv)`
   div:nth-child(even) {
     width: 100%;
   }
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     div:first-child {
       display: flex;
       width: 25%;
@@ -82,7 +82,7 @@ export const AboutJobTwo = styled(AbourJobDiv)`
     border-right: ${({ theme }) => theme.css.border};
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.desktop}) {
     div:first-child,
     div:last-child {
       display: block;
@@ -111,7 +111,7 @@ export const AboutJobThree = styled(AbourJobDiv)`
     border-bottom: ${({ theme }) => theme.css.border};
   }
 
-  @media screen and (min-width: 640px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     flex-wrap: nowrap;
     div:last-child {
       width: 50%;
@@ -122,7 +122,7 @@ export const AboutJobThree = styled(AbourJobDiv)`
     }
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.desktop}) {
     div:first-child {
       border-left: ${({ theme }) => theme.css.border};
     }
@@ -141,7 +141,7 @@ export const AboutJobFour = styled(AbourJobDiv)`
     border-right: ${({ theme }) => theme.css.border};
   }
 
-  @media screen and (min-width: 960px) {
+  @media screen and (${({ theme }) => theme.mediaQueries.desktop}) {
     flex-wrap: nowrap;
     div {
       width: 25%;
