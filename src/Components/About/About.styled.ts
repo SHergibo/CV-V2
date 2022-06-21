@@ -4,7 +4,7 @@ import { TitleRight } from '../../styles/components/Title.styled';
 
 export const AboutStyled = styled.div`
   overflow: hidden;
-  border-bottom: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  border-bottom: ${({ theme }) => theme.css.border};
 `;
 
 export const AboutContainer = styled(Wrapper)`
@@ -75,7 +75,7 @@ export const AboutText = styled.div`
 `;
 
 export const AboutTitle = styled(TitleRight)`
-  border-top: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  border-top: ${({ theme }) => theme.css.border};
   &:after,
   &:before {
     content: '';
