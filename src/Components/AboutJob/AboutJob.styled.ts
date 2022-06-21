@@ -3,7 +3,7 @@ import { Wrapper } from '../../styles/components/Layout.styled';
 
 export const AboutJobContainer = styled.div`
   width: 100%;
-  border-top: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  border-top: ${({ theme }) => theme.css.border};
 `;
 
 const AbourJobDiv = styled(Wrapper)`
@@ -56,17 +56,17 @@ export const AboutJobOne = styled(AbourJobDiv)`
     div:first-child {
       display: flex;
       width: 25%;
-      border-left: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-left: ${({ theme }) => theme.css.border};
     }
     div:last-child {
       display: flex;
       width: 25%;
-      border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-right: ${({ theme }) => theme.css.border};
     }
     div:nth-child(even) {
       width: 50%;
-      border-left: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
-      border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-left: ${({ theme }) => theme.css.border};
+      border-right: ${({ theme }) => theme.css.border};
     }
   }
 `;
@@ -79,7 +79,7 @@ export const AboutJobTwo = styled(AbourJobDiv)`
     display: none;
   }
   div:nth-child(even) {
-    border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+    border-right: ${({ theme }) => theme.css.border};
   }
 
   @media screen and (min-width: 960px) {
@@ -88,10 +88,10 @@ export const AboutJobTwo = styled(AbourJobDiv)`
       display: block;
     }
     div:first-child {
-      border-left: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-left: ${({ theme }) => theme.css.border};
     }
     div {
-      border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-right: ${({ theme }) => theme.css.border};
     }
   }
 `;
@@ -99,16 +99,16 @@ export const AboutJobTwo = styled(AbourJobDiv)`
 export const AboutJobThree = styled(AbourJobDiv)`
   flex-wrap: wrap;
   div:first-child {
-    border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+    border-right: ${({ theme }) => theme.css.border};
   }
   div:last-child {
     width: 100%;
   }
   div:nth-child(even) {
-    border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+    border-right: ${({ theme }) => theme.css.border};
   }
   div:nth-child(-n + 2) {
-    border-bottom: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+    border-bottom: ${({ theme }) => theme.css.border};
   }
 
   @media screen and (min-width: 640px) {
@@ -118,16 +118,16 @@ export const AboutJobThree = styled(AbourJobDiv)`
     }
     div:nth-child(-n + 2) {
       border-bottom: unset;
-      border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-right: ${({ theme }) => theme.css.border};
     }
   }
 
   @media screen and (min-width: 960px) {
     div:first-child {
-      border-left: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-left: ${({ theme }) => theme.css.border};
     }
     div:last-child {
-      border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-right: ${({ theme }) => theme.css.border};
     }
   }
 `;
@@ -135,23 +135,23 @@ export const AboutJobThree = styled(AbourJobDiv)`
 export const AboutJobFour = styled(AbourJobDiv)`
   flex-wrap: wrap;
   div:nth-child(-n + 2) {
-    border-bottom: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+    border-bottom: ${({ theme }) => theme.css.border};
   }
   div:nth-child(odd) {
-    border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+    border-right: ${({ theme }) => theme.css.border};
   }
 
   @media screen and (min-width: 960px) {
     flex-wrap: nowrap;
     div {
       width: 25%;
-      border-right: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-right: ${({ theme }) => theme.css.border};
     }
     div:nth-child(-n + 2) {
       border-bottom: unset;
     }
     div:first-child {
-      border-left: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+      border-left: ${({ theme }) => theme.css.border};
     }
   }
 `;
