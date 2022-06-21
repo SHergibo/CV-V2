@@ -7,7 +7,7 @@ interface IMainMenuProp {
 
 export const MainMenu = styled.div<IMainMenuProp>`
   background-color: ${({ theme }) => theme.colors.mainBlue};
-  border-bottom: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  border-bottom: ${({ theme }) => theme.css.border};
   position: ${({ mainMenufixed }) => (mainMenufixed ? 'fixed' : 'absolute')};
   top: ${({ mainMenufixed }) => (mainMenufixed ? '0' : 'unset')};
   left: 0;
@@ -52,8 +52,8 @@ export const Menu = styled.nav<IMenuProps>`
   left: 0;
   background-color: ${({ theme }) => theme.colors.mainBlue};
   width: 100%;
-  border-bottom: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
-  border-top: 0.5px solid ${({ theme }) => theme.colors.greyBorder};
+  border-bottom: ${({ theme }) => theme.css.border};
+  border-top: ${({ theme }) => theme.css.border};
   display: ${({ displayMenu }) => (displayMenu ? 'block' : 'none')};
   a {
     color: ${({ theme }) => theme.colors.greyOne};
