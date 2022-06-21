@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react';
+import { useState, useRef, useEffect, useContext, Dispatch, SetStateAction } from 'react';
+import { WindowWidthContext } from './../../Routes/Context.route';
 import { useRequest } from '../../Hooks/useRequestHooks';
 import useIsLoaded from '../../Hooks/useIsLoadedHook';
 import { apiDomain, apiVersion } from '../../config/environment.config';
@@ -13,7 +14,7 @@ interface IAboutProps {
 }
 
 const About = ({ setGeneralInfo, setFetchLoaded }: IAboutProps) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const windowWidth = useContext(WindowWidthContext);
   const [imgStyled, setImgStyled] = useState(false);
   const imgAboutRef = useRef<HTMLDivElement>(null!);
   const profilePictureRef = useRef<HTMLImageElement>(null!);
@@ -27,17 +28,6 @@ const About = ({ setGeneralInfo, setFetchLoaded }: IAboutProps) => {
   useEffect(() => {
     if (data && !error) setGeneralInfo(data);
   }, [data, error, setGeneralInfo]);
-
-  const handleResize = () => {
-    setWindowWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
 
   useEffect(() => {
     if (windowWidth >= 640) {
