@@ -1,0 +1,19 @@
+{
+  "_id": "62a49cf047de65124114f2d8",
+  "firstname": "Sacha",
+  "lastname": "Hergibo",
+  "phone": "0497134030",
+  "email": "sachahergibo@gmail.com",
+  "address": { "street": "Route de Velaines", "number": "24A", "zip": "7543", "city": "Mourcourt" },
+  "birthdate": "24/04/1992",
+  "isoBirthdate": "1992-04-23T22:00:00.000Z",
+  "licence": "Détenteur du permis B",
+  "description": "sdsdsdd",
+  "professionTitles": [
+    { "nameProfessionTitle": "Test", "fontAwesomeIcon": { "label": "2", "value": "2", "prefix": "fas" }, "svgIconProfTitle": "", "id": "62a9e3b75bf1606c26b7a1cd" },
+    { "nameProfessionTitle": "Test6", "fontAwesomeIcon": { "label": "4", "value": "4", "prefix": "fas" }, "svgIconProfTitle": "", "id": "62a9e3be5bf1606c26b7a1d1" }
+  ],
+  "hasPortfolio": true,
+  "hasResume": true,
+  "userId": "62790c79ff54b6f18bd42e53"
+}
