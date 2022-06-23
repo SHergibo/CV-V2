@@ -24,19 +24,22 @@ const Welcome = ({ generalInfo }: IWelcomeProps) => {
 
   return (
     <WelcomeSection pageTitle={location.pathname === '/' ? 'Bienvenue' : 'Administration'} headingText={generalInfo ? `${generalInfo.firstname} ${generalInfo.lastname}` : 'Mon site CV'}>
-      {location.pathname === '/' && generalInfo ? (
-        <>
-          <JobName>
-            Je suis un <ReactTypingEffect text={profTitleArray} eraseDelay={250} typingDelay={250} />
-          </JobName>
-          <IconScroll />
-        </>
-      ) : (
-        <>
-          <DefaultWelcomeTitle>Administration</DefaultWelcomeTitle>
-          <IconScroll />
-        </>
-      )}
+      <>
+        {location.pathname === '/' && profTitleArray.length >= 1 && (
+          <>
+            <JobName>
+              Je suis un <ReactTypingEffect text={profTitleArray} eraseDelay={250} typingDelay={250} />
+            </JobName>
+          </>
+        )}
+
+        {location.pathname === '/admin' && (
+          <>
+            <DefaultWelcomeTitle>Administration</DefaultWelcomeTitle>
+          </>
+        )}
+        <IconScroll />
+      </>
     </WelcomeSection>
   );
 };
