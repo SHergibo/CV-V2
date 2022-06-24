@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { PuffLoader } from 'react-spinners';
 import { IFetchLoaded } from '../../Pages/HomePage';
+import { theme } from '../../styles/Theme';
 import { LoadingContainer } from './Loading.styled';
 
 interface ILoadingProps {
@@ -52,7 +53,7 @@ const Loading = ({ fetchLoaded }: ILoadingProps) => {
     <>
       {animLoading && (
         <LoadingContainer ref={loadingRef}>
-          <PuffLoader color={'#1e87f0'} loading={animLoading} />
+          <PuffLoader color={theme.colors.blue} loading={animLoading} />
         </LoadingContainer>
       )}
     </>
