@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useContext } from 'react';
-import { WindowWidthContext } from './../../Routes/Context.route';
+import WindowWidthContext from './../../Context/WindowWidthContext';
 import NavContext from './../../Context/NavContext';
 import { Link } from 'react-scroll';
 import Logo from './../Logo';

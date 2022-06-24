@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useContext, Dispatch, SetStateAction } from 'react';
-import { WindowWidthContext } from './../../Routes/Context.route';
+import WindowWidthContext from './../../Context/WindowWidthContext';
 import { useRequest } from '../../Hooks/useRequestHooks';
 import useIsLoaded from '../../Hooks/useIsLoadedHook';
 import { apiDomain, apiVersion } from '../../config/environment.config';

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { IGeneralInfo } from './../../interfaces';
-import { WindowWidthContext } from './../../Routes/Context.route';
+import WindowWidthContext from './../../Context/WindowWidthContext';
 import parse from 'html-react-parser';
 import FontAwesome from '../FontAwesome';
 import { AboutJobContainer, AboutJobOne, AboutJobTwo, AboutJobThree, AboutJobFour } from './AboutJob.styled';
