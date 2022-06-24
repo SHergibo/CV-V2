@@ -11,7 +11,7 @@ const Logo = () => {
 
   return (
     <LogoContainer onClick={scrollToTop} onKeyPress={scrollToTop}>
-      <Link tabIndex={0} activeClass="active" to="home" spy={true} smooth={true} offset={0} duration={500}>
+      <Link tabIndex={0} activeClass="active" to="welcome" spy={true} smooth={true} offset={0} duration={500}>
         <span>{generalInfo?.firstname ? generalInfo?.firstname : 'Accueil'}</span>
       </Link>
     </LogoContainer>
