@@ -1,4 +1,4 @@
-import { createContext, MutableRefObject, useContext } from 'react';
+import { createContext, MutableRefObject } from 'react';
 import { IGeneralInfo } from '../interfaces';
 
 interface IContextProp {
@@ -9,10 +9,3 @@ interface IContextProp {
 const NavContext = createContext<IContextProp>({ generalInfo: null, headerRef: null });
 
 export default NavContext;
-
-export function useNav() {
-  const generalInfo = useContext(NavContext);
-  const headerRef = useContext(NavContext);
-
-  return [generalInfo, headerRef];
-}
