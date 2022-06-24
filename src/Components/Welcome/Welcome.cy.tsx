@@ -22,17 +22,21 @@ describe('<Welcome> and <WelcomeSection> Testing', () => {
     cy.findByText('Test').should('exist');
   });
   it('Testing for Welcome when generalInfo has no profession title', () => {
-    cy.fixture('generalInfoWithoutProfTitle').then((generalInfo) => {
-      open(
-        <CypressMount>
-          <MemoryRouter initialEntries={['/']}>
-            <Routes>
-              <Route path="/" element={<Welcome generalInfo={generalInfo} />} />
-            </Routes>
-          </MemoryRouter>
-        </CypressMount>
-      );
-    });
+    cy.fixture('generalInfo')
+      .then((generalInfo) => {
+        generalInfo.professionTitles = [];
+      })
+      .then((generalInfo) => {
+        open(
+          <CypressMount>
+            <MemoryRouter initialEntries={['/']}>
+              <Routes>
+                <Route path="/" element={<Welcome generalInfo={generalInfo} />} />
+              </Routes>
+            </MemoryRouter>
+          </CypressMount>
+        );
+      });
     cy.findByText('Bienvenue').should('exist');
     cy.findByText('Sacha Hergibo').should('exist');
     cy.findByText('Je suis un').should('not.exist');
