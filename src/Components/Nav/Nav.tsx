@@ -53,7 +53,7 @@ const Nav = ({ liList, navLeftInteraction }: INavProps) => {
         setMenuTop(false);
       }
     } else {
-      if (menu.current.hasAttribute('style')) {
+      if (menuTop) {
         setMenuTop(false);
       }
       if (setBurgerMenuSwitch) {
