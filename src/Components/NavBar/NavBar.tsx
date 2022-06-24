@@ -9,7 +9,7 @@ const NavBar = () => {
   const navigate = useNavigate();
 
   const [liList, setLiList] = useState([
-    { name: 'Accueil', to: 'home', offset: 0, duration: 500 },
+    { name: 'Accueil', to: 'welcome', offset: 0, duration: 500 },
     { name: 'À propos', to: 'about', offset: -80, duration: 1000 },
     { name: 'Portfolio', to: 'portfolio', offset: -80, duration: 1000 },
     { name: 'Résumé', to: 'resume', offset: -80, duration: 1000 },
@@ -39,7 +39,7 @@ const NavBar = () => {
   useEffect(() => {
     if (location.pathname === '/admin') {
       setLiList([
-        { name: 'Accueil', to: 'home', offset: 0, duration: 500 },
+        { name: 'Accueil', to: 'welcome', offset: 0, duration: 500 },
         { name: 'Infos générales', to: 'infos', offset: -80, duration: 1000 },
         { name: 'Éduc/Éxpe', to: 'educexpe', offset: -80, duration: 1000 },
         { name: 'Compétences', to: 'skills', offset: -80, duration: 1000 },
