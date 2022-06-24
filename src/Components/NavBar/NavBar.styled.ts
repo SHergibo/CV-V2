@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const LinkSocial = styled.a`
+const MenuInteractionSvg = () => css`
   svg {
     height: 1.25rem;
     path {
@@ -26,21 +26,10 @@ export const LinkSocial = styled.a`
   }
 `;
 
-export const NavLeftInteraction = styled.li`
-  display: flex;
-  align-items: center;
-  height: 4.0625rem;
-  padding: 0 0.9375rem;
+export const LinkSocial = styled.a`
+  ${MenuInteractionSvg}
+`;
 
-  &:focus {
-    outline-style: none;
-    box-shadow: none;
-    border-color: transparent;
-    svg {
-      path {
-        stroke: ${({ theme }) => theme.colors.white};
-        fill: none;
-      }
-    }
-  }
+export const NavLeftInteraction = styled.li`
+  ${MenuInteractionSvg}
 `;
