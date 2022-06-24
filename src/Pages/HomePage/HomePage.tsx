@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, createContext, MutableRefObject } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import NavContext from '../../Context/NavContext';
 import About from '../../Components/About';
 import Contact from '../../Components/Contact';
 import Loading from '../../Components/Loading';
@@ -20,13 +21,6 @@ export interface IFetchLoaded {
   skill: ILoaded;
 }
 
-interface IContextProp {
-  generalInfo: IGeneralInfo | null;
-  headerRef: MutableRefObject<HTMLElement> | null;
-}
-
-export const navContext = createContext<IContextProp>({ generalInfo: null, headerRef: null });
-
 const HomagePage = () => {
   const [generalInfo, setGeneralInfo] = useState<IGeneralInfo | null>(null);
   const [fetchLoaded, setFetchLoaded] = useState<IFetchLoaded>({
@@ -46,9 +40,9 @@ const HomagePage = () => {
       <Loading fetchLoaded={fetchLoaded} />
       <header ref={headerRef}>
         <Welcome generalInfo={generalInfo} />
-        <navContext.Provider value={{ generalInfo, headerRef }}>
+        <NavContext.Provider value={{ generalInfo, headerRef }}>
           <NavBar />
-        </navContext.Provider>
+        </NavContext.Provider>
       </header>
       <main>
         <About setGeneralInfo={setGeneralInfo} setFetchLoaded={setFetchLoaded} />

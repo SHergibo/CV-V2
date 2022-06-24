@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback, useContext } from 'react';
 import { WindowWidthContext } from './../../Routes/Context.route';
-import { navContext } from './../../Pages/HomePage';
+import NavContext from './../../Context/NavContext';
 import { Link } from 'react-scroll';
 import Logo from './../Logo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,7 +18,7 @@ interface INavProps {
 
 const Nav = ({ liList, navLeftInteraction }: INavProps) => {
   const windowWidth = useContext(WindowWidthContext);
-  const { headerRef } = useContext(navContext);
+  const { headerRef } = useContext(NavContext);
   const [menuTop, setMenuTop] = useState(false);
   const [mainMenufixed, setMainMenuFixed] = useState(false);
   const [burgerMenuSwitch, setBurgerMenuSwitch] = useState(false);

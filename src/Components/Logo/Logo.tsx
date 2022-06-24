@@ -1,10 +1,10 @@
 import { useContext } from 'react';
-import { navContext } from './../../Pages/HomePage';
+import NavContext from './../../Context/NavContext';
 import { animateScroll as scroll, Link } from 'react-scroll';
 import { LogoContainer } from './Logo.styled';
 
 const Logo = () => {
-  const { generalInfo } = useContext(navContext);
+  const { generalInfo } = useContext(NavContext);
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
