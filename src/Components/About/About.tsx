@@ -6,6 +6,7 @@ import { apiDomain, apiVersion } from '../../config/environment.config';
 import { IGeneralInfo } from '../../interfaces';
 import { IFetchLoaded } from '../../Pages/HomePage';
 import { AboutStyled, AboutContainer, ImgAbout, AboutText, AboutTitle, AboutMe, Info } from './About.styled';
+import defaultProfilePic from './../../images/default-profile-picture.png';
 import AboutJob from './../AboutJob';
 
 interface IAboutProps {
@@ -45,7 +46,7 @@ const About = ({ setGeneralInfo, setFetchLoaded }: IAboutProps) => {
       <AboutContainer>
         <ImgAbout ref={imgAboutRef} imgStyled={imgStyled}>
           {data?.profilePic?.fileName && <img ref={profilePictureRef} src={`${apiDomain}/api/${apiVersion}/infos/image/${data?.profilePic?.fileName}`} alt={data?.profilePic?.alt} />}
-          {!data?.profilePic?.fileName && <img ref={profilePictureRef} src="./default-profile-picture.png" alt="Profil par défaut" />}
+          {!data?.profilePic?.fileName && <img ref={profilePictureRef} src={defaultProfilePic} alt="Profil par défaut" />}
         </ImgAbout>
         <AboutText>
           <AboutTitle>À propos</AboutTitle>
@@ -66,7 +67,7 @@ const About = ({ setGeneralInfo, setFetchLoaded }: IAboutProps) => {
               <li>
                 <span>Adresse :</span>
                 <div>
-                  {data?.address.street && (
+                  {data?.address?.street && (
                     <>
                       {data?.address.street}, {data?.address.number} {data?.address.zip} {data?.address.city}
                     </>
