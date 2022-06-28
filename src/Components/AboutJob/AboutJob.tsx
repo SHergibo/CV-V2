@@ -15,7 +15,7 @@ const AboutJob = ({ generalInfo }: IAboutJobProps) => {
   return (
     <>
       {(windowWidth >= 960 || (windowWidth < 960 && generalInfo && generalInfo.professionTitles?.length >= 1)) && (
-        <AboutJobContainer>
+        <AboutJobContainer id="aboutJob">
           {generalInfo?.professionTitles.length === 0 && (
             <AboutJobFour>
               <div></div>
