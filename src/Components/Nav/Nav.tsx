@@ -60,7 +60,7 @@ const Nav = ({ liList, navLeftInteraction }: INavProps) => {
         setBurgerMenuSwitch(false);
       }
     }
-  }, [windowWidth, setBurgerMenuSwitch]);
+  }, [windowWidth, setBurgerMenuSwitch, menuTop]);
 
   useEffect(() => {
     window.addEventListener('scroll', handleMenuScroll);
