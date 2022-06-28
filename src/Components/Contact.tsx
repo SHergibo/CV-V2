@@ -6,7 +6,7 @@ interface IContactProps {
 
 const Contact = ({ generalInfo }: IContactProps) => {
   return (
-    <div>
+    <div id="contact">
       <h3>Contact</h3>
       {generalInfo?.firstname}
     </div>

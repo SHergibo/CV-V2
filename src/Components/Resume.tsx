@@ -32,7 +32,7 @@ const Resume = ({ setFetchLoaded }: IResumeProps) => {
   useIsLoaded({ loading: lodingSkill, error: errorSkill, setStateFunc: setFetchLoaded, objectKey: 'skill' });
 
   return (
-    <div>
+    <div id="resume">
       <h3>Resume</h3>
       <p>{dataEducExp?.[0].dateStart}</p>
       <p>{dataSkill?.[0].nameSkill}</p>

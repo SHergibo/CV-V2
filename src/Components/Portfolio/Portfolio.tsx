@@ -22,7 +22,7 @@ const Portfolio = ({ setFetchLoaded }: IPortfolioProps) => {
   useIsLoaded({ loading, error, setStateFunc: setFetchLoaded, objectKey: 'portfolio' });
 
   return (
-    <div>
+    <div id="portfolio">
       <h3>Portfolio</h3>
       <p>{data?.arrayData[0]._id}</p>
     </div>
