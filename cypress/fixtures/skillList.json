@@ -1,0 +1,5 @@
+[
+  { "_id": "62862bb7233d8f4488a4b7fe", "nameSkill": "test", "skillCategory": "codingSkill", "fontAwesomeIcon": { "label": "0", "value": "0", "prefix": "fas" }, "svgIcon": "" },
+  { "_id": "6286385dc1021d6ada12e566", "nameSkill": "test", "skillCategory": "generalSkill", "fontAwesomeIcon": { "label": "1", "value": "1", "prefix": "fas" }, "svgIcon": "" },
+  { "_id": "62863864c1021d6ada12e569", "nameSkill": "test", "skillCategory": "language", "fontAwesomeIcon": { "label": "2", "value": "2", "prefix": "fas" }, "svgIcon": "" }
+]

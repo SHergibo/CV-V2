@@ -1,0 +1,4 @@
+[
+  { "_id": "6286384ec1021d6ada12e560", "dateStart": "2022-01-31T23:00:00.000Z", "dateEnd": "2023-06-30T22:00:00.000Z", "titleEducExpe": "test", "placeEducExpe": "test", "educExpe": "education" },
+  { "_id": "62863856c1021d6ada12e563", "dateStart": "2022-01-31T23:00:00.000Z", "dateEnd": "2023-06-30T22:00:00.000Z", "titleEducExpe": "test", "placeEducExpe": "test", "educExpe": "experience" }
+]

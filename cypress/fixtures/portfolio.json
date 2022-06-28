@@ -1,0 +1,27 @@
+{
+  "arrayData": [
+    {
+      "_id": "62863d54c1021d6ada12e5d1",
+      "projectName": "Test1",
+      "description": "dfdfsdfdff",
+      "images": [{ "fileName": "1652964692077-food-ledger-statistiques-des-stocks.png", "alt": "Image", "id": "62863d54c1021d6ada12e5cf" }],
+      "technoUsedFront": [{ "value": "sdsd", "label": "sdsd" }],
+      "technoUsedBack": [{ "value": "ddff", "label": "ddff" }],
+      "urlWeb": "https://sachahergibo.be/",
+      "urlGithub": "https://github.com/SHergibo/back-bone",
+      "pageIndex": 0
+    },
+    {
+      "_id": "6286387fc1021d6ada12e56e",
+      "projectName": "Test",
+      "description": "aaaaa",
+      "images": [{ "fileName": "1652963455053-node-express-mongodb.jpeg", "alt": "Image", "id": "6286387fc1021d6ada12e56c" }],
+      "technoUsedFront": [{ "value": "NodeJs", "label": "NodeJs" }],
+      "technoUsedBack": [{ "value": "React", "label": "React" }],
+      "urlWeb": "https://sachahergibo.be/",
+      "urlGithub": "https://github.com/SHergibo/back-bone",
+      "pageIndex": 0
+    }
+  ],
+  "totalData": 2
+}
