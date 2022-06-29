@@ -43,12 +43,12 @@ export const ImgAbout = styled.div<IImgAboutProps>`
   @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
     position: relative;
     width: 25%;
-    background-color: ${({ imgStyled, theme }) => (imgStyled ? 'transparent' : `${theme.colors.btnBlueOver}`)};
+    background-color: ${({ imgStyled, theme }) => (imgStyled ? 'transparent' : `${theme.colors.btnBlueHover}`)};
     overflow: hidden;
     &:after {
       content: '';
       position: absolute;
-      background: ${({ theme }) => theme.colors.btnBlueOver};
+      background: ${({ theme }) => theme.colors.btnBlueHover};
       bottom: 0;
       top: 0;
       right: 0;
@@ -58,7 +58,7 @@ export const ImgAbout = styled.div<IImgAboutProps>`
     img {
       position: absolute;
       width: 100%;
-      border-bottom: ${({ imgStyled, theme }) => (imgStyled ? `1.25rem solid ${theme.colors.btnBlueOver}` : 'none')};
+      border-bottom: ${({ imgStyled, theme }) => (imgStyled ? `1.25rem solid ${theme.colors.btnBlueHover}` : 'none')};
     }
   }
 `;
