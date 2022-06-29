@@ -4,7 +4,9 @@ import 'styled-components';
 interface IColorsProps {
   mainBlue: string;
   blue: string;
-  btnBlueOver: string;
+  blueHover: string;
+  btnBlue: string;
+  btnBlueHover: string;
   white: string;
   greyOne: string;
   greyTwo: string;
@@ -31,7 +33,9 @@ declare module 'styled-components' {
 const colors: IColorsProps = {
   mainBlue: 'hsl(211, 80%, 10%)',
   blue: 'hsl(208, 100%, 43%)',
-  btnBlueOver: 'hsl(232, 68%, 43%)',
+  blueHover: 'hsla(210, 88%, 53%, 0.849)',
+  btnBlue: 'hsl(167, 72%, 60%)',
+  btnBlueHover: 'hsl(232, 68%, 43%)',
   white: '#ffffff',
   greyOne: 'hsla(0, 0%, 100%, 0.7)',
   greyTwo: 'hsla(0, 0%, 100%, 0.5)',
