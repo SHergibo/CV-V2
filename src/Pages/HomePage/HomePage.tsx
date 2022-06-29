@@ -35,6 +35,21 @@ const HomagePage = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    if (!generalInfo?.hasPortfolio) {
+      setFetchLoaded((prevState: IFetchLoaded) => ({
+        ...prevState,
+        ['portfolio']: { isLoaded: true, error: false }
+      }));
+    }
+    if (!generalInfo?.hasResume) {
+      setFetchLoaded((prevState: IFetchLoaded) => ({
+        ...prevState,
+        ['resume']: { isLoaded: true, error: false }
+      }));
+    }
+  }, [generalInfo]);
+
   return (
     <>
       <Loading fetchLoaded={fetchLoaded} />
