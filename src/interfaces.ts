@@ -42,7 +42,7 @@ interface ITechnoUsed {
   label: string;
 }
 
-interface IProject {
+export interface IProject {
   _id: string;
   urlWeb: string;
   urlGithub: string;
