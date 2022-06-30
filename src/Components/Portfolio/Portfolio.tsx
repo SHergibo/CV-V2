@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, useContext, Dispatch, SetStateAction, ChangeEvent } from 'react';
+import { useState, useEffect, useRef, useContext, Dispatch, SetStateAction, ChangeEvent } from 'react';
 import WindowWidthContext from './../../Context/WindowWidthContext';
 import axios from 'axios';
 import { useRequest } from '../../Hooks/useRequestHooks';
@@ -23,7 +23,8 @@ import {
   Project,
   ProjectCarrouselFullScreen,
   BtnCarrouselBefore,
-  BtnCarrouselAfter
+  BtnCarrouselAfter,
+  PortfolioInfoContainer
 } from './Portfolio.styled';
 import { TitleRight } from '../../styles/components/Title.styled';
 
@@ -192,19 +193,23 @@ const Portfolio = ({ setFetchLoaded }: IPortfolioProps) => {
                           >
                             <FontAwesomeIcon icon="plus" />
                           </button>
-                          <span>
-                            {item.urlWeb && (
-                              <a tabIndex={0} target="_blank" rel="noreferrer" title="Voir le site web du projet" href={item.urlWeb}>
-                                <FontAwesomeIcon icon="link" />
-                              </a>
-                            )}
-                            {!item.urlGithub && (
+                          {item.urlGithub && (
+                            <span>
                               <a tabIndex={0} target="_blank" rel="noreferrer" title="Voir le projet sur GitHub" href={item.urlGithub}>
                                 <FontAwesomeIcon icon={['fab', 'github']} />
                               </a>
-                            )}
-                          </span>
+                            </span>
+                          )}
                         </div>
+                        {item.urlWeb && (
+                          <div>
+                            <span>
+                              <a tabIndex={0} target="_blank" rel="noreferrer" title="Voir le site web du projet" href={item.urlWeb}>
+                                <FontAwesomeIcon icon="link" />
+                              </a>
+                            </span>
+                          </div>
+                        )}
                       </ProjectCardMore>
                     </ProjectCard>
                   );
@@ -267,8 +272,8 @@ const Portfolio = ({ setFetchLoaded }: IPortfolioProps) => {
               </ProjectCarrouselFullScreen>
             )}
 
-            <div className="portfolio-info-container">
-              <div className="title-right">Projet - {value?.projectName}</div>
+            <PortfolioInfoContainer>
+              <TitleRight>Projet - {value?.projectName}</TitleRight>
               <SwitchTransition mode={'out-in'}>
                 <CSSTransition
                   key={value?._id}
@@ -280,20 +285,19 @@ const Portfolio = ({ setFetchLoaded }: IPortfolioProps) => {
                 >
                   <div ref={nodeRef}>
                     <InfoProject
-                    // value={value}
-                    // setArrayProject={setArrayProject}
-                    // setDisplayProject={setDisplayProject}
-                    // pageIndexState={{ pageIndex, setPageIndex }}
-                    // windowWidth={windowWidth}
-                    // switchProjectCarousel={switchProjectCarousel}
-                    // indexProjectState={{ indexProject, setIndexProject }}
-                    // pageIndexCarousel={pageIndexCarousel}
-                    // nextProjectState={{ nextProject, setNextProject }}
+                      value={value}
+                      setArrayProject={setArrayProject}
+                      setDisplayProject={setDisplayProject}
+                      pageIndexState={{ pageIndex, setPageIndex }}
+                      switchProjectCarousel={switchProjectCarousel}
+                      indexProjectState={{ indexProject, setIndexProject }}
+                      pageIndexCarousel={pageIndexCarousel}
+                      nextProjectState={{ nextProject, setNextProject }}
                     />
                   </div>
                 </CSSTransition>
               </SwitchTransition>
-            </div>
+            </PortfolioInfoContainer>
 
             {windowWidth >= 1087 && (
               <ProjectCarrouselFullScreen>
