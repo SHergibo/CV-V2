@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { CircleBtn } from '../../styles/mixins/CircleBtn.styled';
 import { Wrapper } from '../../styles/components/Layout.styled';
 
 export const PortfolioContainer = styled.div`
@@ -57,14 +58,21 @@ export const ProjectCardMore = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   margin: 0.625rem;
   border-radius: 7px;
   background-color: ${({ theme }) => theme.colors.mainBlue};
   transition: opacity ease-in-out 0.5s;
-  div {
-    width: 6.25rem;
-    display: flex;
+  div:first-child {
     justify-content: space-between;
+  }
+  div:nth-child(2) {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  div {
+    width: 7rem;
+    display: flex;
     button,
     span {
       display: flex;
@@ -212,22 +220,7 @@ export const ProjectCarrouselFullScreen = styled.div`
     min-width: 3.5rem;
     ${BtnCarrouselBefore},
     ${BtnCarrouselAfter} {
-      width: 2.5rem;
-      height: 2.5rem;
-      border-radius: 50%;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: ${({ theme }) => theme.colors.blue};
-      color: ${({ theme }) => theme.colors.mainBlue};
-      outline: none;
-      cursor: pointer;
-      transition: 0.3s ease-in-out;
-      &:hover {
-        background-color: ${({ theme }) => theme.colors.btnBlueHover};
-        color: ${({ theme }) => theme.colors.greyOne};
-      }
+      ${({ theme }) => CircleBtn({ color: theme.colors.blue, colorHover: theme.colors.btnBlueHover })}
     }
     ${BtnCarrouselBefore} {
       margin-right: 1rem;
@@ -236,4 +229,8 @@ export const ProjectCarrouselFullScreen = styled.div`
       margin-left: 1rem;
     }
   }
+`;
+
+export const PortfolioInfoContainer = styled.div`
+  width: 100%;
 `;
