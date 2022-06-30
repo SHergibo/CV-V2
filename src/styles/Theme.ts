@@ -11,7 +11,10 @@ interface IColorsProps {
   greyOne: string;
   greyTwo: string;
   greyThree: string;
+  greyFour: string;
   greyBorder: string;
+  btnRed: string;
+  btnRedHover: string;
 }
 
 declare module 'styled-components' {
@@ -40,7 +43,10 @@ const colors: IColorsProps = {
   greyOne: 'hsla(0, 0%, 100%, 0.7)',
   greyTwo: 'hsla(0, 0%, 100%, 0.5)',
   greyThree: 'hsla(0, 0%, 100%, 0.62)',
-  greyBorder: 'hsla(0, 0%, 100%, 0.3)'
+  greyFour: 'hsla(0, 0%, 100%, 0.2)',
+  greyBorder: 'hsla(0, 0%, 100%, 0.3)',
+  btnRed: 'hsl(360, 82%, 63%)',
+  btnRedHover: 'hsl(0, 82%, 53%)'
 };
 
 const theme: DefaultTheme = {
