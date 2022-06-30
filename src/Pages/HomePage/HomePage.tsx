@@ -39,13 +39,13 @@ const HomagePage = () => {
     if (!generalInfo?.hasPortfolio) {
       setFetchLoaded((prevState: IFetchLoaded) => ({
         ...prevState,
-        ['portfolio']: { isLoaded: true, error: false }
+        portfolio: { isLoaded: true, error: false }
       }));
     }
     if (!generalInfo?.hasResume) {
       setFetchLoaded((prevState: IFetchLoaded) => ({
         ...prevState,
-        ['resume']: { isLoaded: true, error: false }
+        resume: { isLoaded: true, error: false }
       }));
     }
   }, [generalInfo]);
