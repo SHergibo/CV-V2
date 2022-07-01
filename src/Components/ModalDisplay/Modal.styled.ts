@@ -15,8 +15,8 @@ export const ModalDisplayContainer = styled.div<IModalDisplay>`
   justify-content: center;
   align-items: center;
   background-color: hsla(211, 80%, 10%, 0.984);
-  opacity: ${(displayForm) => (displayForm ? '1' : '0')};
-  z-index: ${(displayForm) => (displayForm ? '101' : '-10')};
+  opacity: ${({ displayForm }) => (displayForm ? '1' : '0')};
+  z-index: ${({ displayForm }) => (displayForm ? '101' : '-10')};
 `;
 
 export const ModalContainer = styled.div`
