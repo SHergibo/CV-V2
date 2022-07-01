@@ -17,21 +17,33 @@ const BtnTileActionContainer = styled.div`
 `;
 
 export const BtnTitleAction = styled(BtnTileActionContainer)`
-  ${({ theme }) => CircleBtn({ color: theme.colors.blue, colorHover: theme.colors.btnBlueHover })}
+  button {
+    ${({ theme }) => CircleBtn({ bgColor: theme.colors.btnBlue, bgColorHover: theme.colors.btnBlueHover })}
+  }
 `;
 
 export const BtnTitleActionDelete = styled(BtnTileActionContainer)`
-  ${({ theme }) => CircleBtn({ color: theme.colors.btnRed, colorHover: theme.colors.btnRedHover })}
+  button {
+    ${({ theme }) => CircleBtn({ bgColor: theme.colors.btnRed, bgColorHover: theme.colors.btnRedHover })}
+  }
 `;
 
-export const TitleContainer = styled.div`
-  .title-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    h2 {
-      width: 85%;
-    }
+interface ITitleContainer {
+  h2after50: boolean;
+  h2after75: boolean;
+}
+
+export const TitleContainer = styled.div<ITitleContainer>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    width: 85%;
+    ${({ h2after50, h2after75 }) => {
+      if (h2after50) return 'bottom: 3.125rem';
+      if (h2after75) return 'bottom: 4.6875rem';
+      if (!h2after50 || !h2after75) return null;
+    }}
   }
 
   @media screen and (${({ theme }) => theme.mediaQueries.tablet}) {
