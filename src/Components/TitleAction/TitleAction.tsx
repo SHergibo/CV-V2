@@ -41,7 +41,7 @@ const TitleAction = ({ format = 'switch', title, btnTitle, action, btnState = {}
   }, [windowWidth]);
 
   return (
-    <TitleContainer>
+    <TitleContainer h2after50={h2after50} h2after75={h2after75}>
       <h2 ref={titleRef}>{title}</h2>
 
       {format !== 'delete' && (
