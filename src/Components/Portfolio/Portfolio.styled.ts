@@ -220,7 +220,7 @@ export const ProjectCarrouselFullScreen = styled.div`
     min-width: 3.5rem;
     ${BtnCarrouselBefore},
     ${BtnCarrouselAfter} {
-      ${({ theme }) => CircleBtn({ color: theme.colors.blue, colorHover: theme.colors.btnBlueHover })}
+      ${({ theme }) => CircleBtn({ bgColor: theme.colors.btnBlue, bgColorHover: theme.colors.btnBlueHover })}
     }
     ${BtnCarrouselBefore} {
       margin-right: 1rem;
