@@ -285,7 +285,7 @@ const Portfolio = ({ setFetchLoaded }: IPortfolioProps) => {
                 >
                   <div ref={nodeRef}>
                     <InfoProject
-                      value={value}
+                      value={value!}
                       setArrayProject={setArrayProject}
                       setDisplayProject={setDisplayProject}
                       pageIndexState={{ pageIndex, setPageIndex }}
